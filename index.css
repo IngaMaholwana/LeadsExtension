@@ -15,9 +15,19 @@ input{
 button{
     background: green;
     color: white;
-    paddin: 10px 20px;
+    padding: 10px 20px;
     border: none;
     font-weight: bold;
+}
 
-
+ul{
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 0;
+}
+li{
+margin-top: 5px;
+}
+li a{
+    color: green;
 }
