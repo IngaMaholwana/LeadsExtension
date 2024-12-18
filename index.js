@@ -14,9 +14,17 @@ inputBtn.addEventListener("click", function(){
     console.log(myLeads)
 })
 
+let listItems = "" // list variable list to hold all html
 for (let i =0;i < myLeads.length; i++){
-    ulEl.innerHTML += "<li>" + myLeads[i] + "</li>"
+    listItems += "<li>" + myLeads[i] + "</li>"
+    
+
+    // ulEl.innerHTML += "<li>" + myLeads[i] + "</li>"
     // ulEl.textContent += myLeads[i] + " " this way they will show as a the way written above inner makes em list
     // anothe alternative to inner
+    // const li = document.createElement("li") //create element
+    // li.textContent = myLeads[i] // set text
+    // ulEl.append(li) //append to ul
      
 }
+ulEl.innerHTML = listItems
