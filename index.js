@@ -3,13 +3,28 @@ const inputEl = document.getElementById("input-el")//const is the same as let bu
 const inputBtn = document.getElementById("input-btn") 
 const ulEl = document.getElementById("ul-el")
 
+// localStorage.setItem("myName","Inga Maholwana")
+// let name = localStorage.getItem("myName")
+// console.log(name)
 
+const deleteBtn = document.getElementById("delete-btn")
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads")) // this is to get the data from local storage
+if (leadsFromLocalStorage){
+    myLeads = leadsFromLocalStorage
+    renderLeads()
+}
 
+deleteBtn.addEventListener("dblclick", function(){
+    localStorage.clear()
+    myLeads = []
+    renderLeads()
+})
 
 // another way to get clicks from users this one below
 inputBtn.addEventListener("click", function(){
     myLeads.push(inputEl.value)
     inputEl.value = "" // thiss so once inputed it be gone
+    localStorage.setItem("myLeads",JSON.stringify(myLeads))
     renderLeads()
     
 })
